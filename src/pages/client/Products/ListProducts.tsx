@@ -13,7 +13,7 @@ import {
 import "../../../scss/TreeselectAntd.scss";
 
 const ListProducts = () => {
-  const { filterProducts, totalPages, listProducts, formatPrice, totalDocs } =
+  const { filterProducts, totalPages, listProducts, formatPrice } =
     useContext(ProductContext) as ProductContextType;
   const { state } = useContext(BrandContext) as BrandContextType;
   const [sortPriceRange, setSortPriceRange] = useState<

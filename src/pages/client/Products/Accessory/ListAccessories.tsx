@@ -21,7 +21,6 @@ const ListAccessories = () => {
     totalPages,
     filterAccessories,
     listAccessories,
-    totalDocs,
   } = useContext(AccessoryContext) as AccessoryContextType;
   const [sortPriceRange, setSortPriceRange] = useState<
     | "priceOne"
