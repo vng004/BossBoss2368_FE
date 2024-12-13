@@ -1,0 +1,52 @@
+/* Màu chữ cho mục phân trang đang được chọn */
+.ant-pagination .ant-pagination-item-active a {
+  color: white;
+}
+
+/* Viền và nền cho mục phân trang đang được chọn (viền cùng màu với nền) */
+.ant-pagination .ant-pagination-item-active {
+  border: 1px solid #ef4d38;
+  background: #ef4d38;
+}
+
+/* Hover cho các mục không được chọn */
+.ant-pagination .ant-pagination-item:not(.ant-pagination-item-active):hover a {
+  color: white;
+  background: #ef4d38;
+  border-radius: 6px;
+  border: 1px solid #ef4d38;
+}
+/* Hover cho nút Previous và Next */
+.ant-pagination-prev:hover .ant-pagination-item-link,
+.ant-pagination-next:hover .ant-pagination-item-link {
+  background-color: transparent !important; /* Màu nền cam khi hover */
+  border-color: #ef4d38; /* Màu viền cam khi hover */
+  color: #ef4d38; /* Màu chữ trắng khi hover */
+}
+
+/* Để bỏ màu nền xám mặc định */
+.ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination-next .ant-pagination-item-link {
+  background-color: transparent; /* Loại bỏ nền xám mặc định */
+  border-color: #e9ecef; /* Giữ viền xám mặc định */
+  color: #ef4d38 !important; /* Màu chữ trắng khi hover */
+
+}
+
+
+/* Hover cho mục active */
+.ant-pagination .ant-pagination-item-active:hover a {
+  color: white;
+}
+
+/* Giữ màu viền và nền khi hover vào mục active */
+.ant-pagination .ant-pagination-item-active:hover {
+  border-color: #ef4d38;
+  background: #ef4d38;
+  border: 1px solid #ef4d38;
+}
+.ant-pagination .ant-pagination-item:not(.ant-pagination-item-active) a {
+  color: #ef4d38; /* Màu chữ mặc định */
+  border: 1px solid #ef4d38; /* Viền mặc định */
+  border-radius: 6px;
+}

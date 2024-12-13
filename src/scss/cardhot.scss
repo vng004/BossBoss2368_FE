@@ -1,0 +1,32 @@
+.swiper-pagination {
+  position: relative;
+  text-align: center; /* Căn trái cho pagination */
+  margin-top: 60px;
+}
+
+.swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  margin: 0 5px;
+  border-radius: 50%; /* Tạo hình tròn cho các chấm */
+  display: inline-block;
+  transition: all 0.3s ease-in-out; /* Thêm transition cho tất cả thuộc tính */
+}
+.swiper-pagination-bullet:hover {
+  width: 60px; /* Kích thước dẹt cho chấm đang chọn */
+  height: 16px;
+  border-radius: 50px; /* Bo tròn tạo hiệu ứng dẹt */
+  background-color: #ef4d38;
+}
+
+/* Style cho chấm đang được chọn */
+.swiper-pagination-bullet-active {
+  background-color: #ef4d38; /* Màu đỏ khi đang chọn */
+  width: 60px; /* Kích thước dẹt cho chấm đang chọn */
+  height: 16px;
+  border-radius: 50px; /* Bo tròn tạo hiệu ứng dẹt */
+  transition: all 0.3s ease-in-out; /* Đảm bảo chuyển đổi mượt mà khi chọn */
+}
+.swiper-wrapper{
+  padding: 6px;
+}

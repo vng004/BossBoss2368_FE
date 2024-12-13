@@ -1,0 +1,52 @@
+.ant-select-selector {
+  border-color: #e5e7eb !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.error {
+  border: 1px solid #ef4d38;
+  border-radius: 8px;
+}
+
+.input {
+  outline: none;
+  width: 100%;
+  height: 57px;
+  border-radius: 8px;
+}
+
+.custom-input-container {
+  position: relative;
+}
+
+.custom-input-container input {
+  background-color: transparent;
+}
+
+.custom-input-container label {
+  position: absolute;
+  left: 16px;
+  top: 37%;
+  transform: translateY(-50%);
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.custom-input-container input:focus + label,
+.custom-input-container input:not(:placeholder-shown) + label {
+  top: 0px;
+  left: 16px;
+  font-size: 12px;
+  background-color: white;
+  padding: 0 4px;
+  color: var(--focused-color);
+}
+
+.custom-input-container input:focus.border-red-500 + label {
+  --focused-color: #ef4d38;
+}
+
+.custom-input-container input:focus.border-red-500 {
+  border-color: #ef4d38;
+}

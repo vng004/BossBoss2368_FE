@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "FontTitle";
+    src: url('./Poppins-Medium.ttf')format('ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "FontDesc";
+    src: url('./Poppins-Light.ttf')format('ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    font-family: 'FontTitle', sans-serif; /* Sử dụng font chính */
+}

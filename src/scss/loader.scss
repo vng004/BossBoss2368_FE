@@ -1,0 +1,56 @@
+.loader-container {
+  display: flex;
+  height: 100vh; // Chiều cao màn hình
+  align-items: center; // Căn giữa theo chiều dọc
+  justify-content: center; // Căn giữa theo chiều ngang
+  background-color: white; // Màu nền
+}
+
+.bike-wheel {
+  position: relative; // Để các chi tiết được căn chỉnh đúng vị trí
+  width: 100px; // Đường kính bánh xe
+  height: 100px; // Đường kính bánh xe
+  border: 8px solid #ef4d38; // Màu vành bánh xe
+  border-radius: 50%; // Tạo hình tròn
+  animation: spin 1s linear infinite; // Thêm hiệu ứng quay
+
+  // Tạo hiệu ứng quay
+  @keyframes spin {
+    from {
+      transform: rotate(0deg); // Bắt đầu từ 0 độ
+    }
+    to {
+      transform: rotate(360deg); // Quay một vòng tròn hoàn chỉnh
+    }
+  }
+
+  .spoke {
+    position: absolute; // Căn chỉnh các nan hoa
+    background: #ef4d38; // Màu nan hoa
+    width: 4px; // Độ rộng của nan hoa
+    height: 30px; // Độ dài của nan hoa
+    top: 50%; // Căn giữa theo chiều dọc
+    left: 50%; // Căn giữa theo chiều ngang
+    transform-origin: bottom; // Điểm gốc quay
+  }
+
+  // Đặt vị trí cho từng nan hoa
+  .spoke:nth-child(1) {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  .spoke:nth-child(2) {
+    transform: translate(-50%, -100%) rotate(60deg);
+  }
+  .spoke:nth-child(3) {
+    transform: translate(-50%, -100%) rotate(120deg);
+  }
+  .spoke:nth-child(4) {
+    transform: translate(-50%, -100%) rotate(180deg);
+  }
+  .spoke:nth-child(5) {
+    transform: translate(-50%, -100%) rotate(240deg);
+  }
+  .spoke:nth-child(6) {
+    transform: translate(-50%, -100%) rotate(300deg);
+  }
+}
