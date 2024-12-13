@@ -50,7 +50,7 @@ const LayoutClient = () => {
     setTimeout(() => setLoading(false), 1200);
   }, []);
 
-  const shouldShowHeader = !location.pathname.startsWith('/thanh-toan') && !location.pathname.startsWith('/VNG-BOSSBOSS2368/login-to-admin/by=LeDinhAnh');
+  const shouldShowHeader = !location.pathname.startsWith('/thanh-toan') && !location.pathname.startsWith('/VNG-BOSSBOSS2368/login-to-admin/by/LeDinhAnh');
 
   return loading ? (
     <Loader />

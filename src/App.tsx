@@ -83,7 +83,7 @@ function App() {
           <Route path="/chinh-sach-doi-tra" element={<Return />} />
           <Route path="/dieu-khoan-dich-vu" element={<TermsOfService />} />
 
-          <Route path="/VNG-BOSSBOSS2368/login-to-admin/by=LeDinhAnh" element={<LoginToAdmin />} />
+          <Route path="/VNG-BOSSBOSS2368/login-to-admin/by/LeDinhAnh" element={<LoginToAdmin />} />
 
 
         </Route>
