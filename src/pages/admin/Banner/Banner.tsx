@@ -31,38 +31,34 @@ const Banners = () => {
       </div>
       <div className=" bg-white p-10 rounded-lg">
         <div>
-          {banner &&
-            (banner.images.length > 0 ? (
-              <div>
-                <Carousel autoplay>
-                  {banner.images.map((img, index) => (
-                    <img key={index} src={img} alt={`Banner`} />
-                  ))}
-                </Carousel>
-                <Link to={`/admin/banner-edit/${banner._id}`}>
-                  <button
-                    type="button"
-                    className="custom-button rounded-lg h-12 w-full"
-                  >
-                    Cập nhật
-                  </button>
-                </Link>
-              </div>
-            ) : (
-              <div>
-                <div className="border-2 rounded-lg h-[550px] pt-60 text-xl hover:border-[#1c2434]">
-                  Chưa có ảnh nào. Hãy thêm mới ảnh banner.
-                </div>
-                <Link to={"/admin/banner-add"}>
-                  <button
-                    type="button"
-                    className="custom-button rounded-lg h-12 w-full mt-2 "
-                  >
-                    Thêm mới ảnh banner
-                  </button>
-                </Link>
-              </div>
-            ))}
+          {banner?.images && banner.images.length > 0 ? (
+            <div>
+              <Carousel autoplay>
+                {banner.images.map((img, index) => (
+                  <img key={index} src={img} alt={`Banner`} />
+                ))}
+              </Carousel>
+              <Link to={`/admin/banner-edit/${banner._id}`}>
+                <button
+                  type="button"
+                  className="custom-button rounded-lg h-12 w-full"
+                >
+                  Cập nhật
+                </button>
+              </Link>
+            </div>
+          ) : (
+            <div>
+              <Link to={"/admin/banner-add"}>
+                <button
+                  type="button"
+                  className="custom-button rounded-lg h-12 w-full mt-2 "
+                >
+                  Thêm mới ảnh banner
+                </button>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

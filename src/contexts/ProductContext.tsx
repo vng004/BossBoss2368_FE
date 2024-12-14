@@ -336,6 +336,7 @@ export const ProductProvider = ({
                 type: "UPDATE_PRODUCT_HOT",
                 payload: { productId, hotStatus },
               });
+              getAllProduct(1, 6);
             } catch (error) {
               console.log(error);
             }

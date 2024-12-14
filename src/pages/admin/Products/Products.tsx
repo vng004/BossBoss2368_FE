@@ -1,8 +1,4 @@
-import {
-  DeleteOutlined,
-  EditOutlined,
-  PlusOutlined
-} from "@ant-design/icons";
+import { DeleteOutlined, EditOutlined, PlusOutlined } from "@ant-design/icons";
 import {
   Button,
   Checkbox,
@@ -10,7 +6,7 @@ import {
   Space,
   Table,
   Tooltip,
-  TreeSelect
+  TreeSelect,
 } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import { useContext, useState } from "react";
@@ -164,7 +160,7 @@ const Products = () => {
       page: page,
       limit: 6,
       selectedBrands: "",
-      isHot: undefined,
+      isHot: selectedStatus,
       onSale: undefined,
       priceRange: undefined,
       sortByDate: "latest",
@@ -173,6 +169,7 @@ const Products = () => {
     setCurrentPage(page);
     setLoading(false);
   };
+  console.log(listProducts);
 
   return (
     <div>
