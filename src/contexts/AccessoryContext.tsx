@@ -43,12 +43,18 @@ export const AccessoryProvider = ({
   const [listAccessories, setListAccessories] = useState<Accessory[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
-  const [totalDocs, setTotalDocs] = useState<number>(1);
+  const [totalDocs, setTotalDocs] = useState<number>(0);
   const nav = useNavigate();
 
   useEffect(() => {
     getAllAccessory(1, 6);
+    getAccessories();
   }, []);
+
+  const getAccessories = async () => {
+    const { data } = await instance.get("/accessories");
+    setTotalDocs(data.data.totalDocs);
+  };
 
   const getAllAccessory = async (page: number, limit: number) => {
     try {
@@ -58,6 +64,7 @@ export const AccessoryProvider = ({
           _limit: limit,
           _sort: "createdAt",
           _order: "asc",
+          sortCreatedAt: "latest",
         },
       });
       setTotalPages(data.data.totalPages);
@@ -90,7 +97,6 @@ export const AccessoryProvider = ({
       );
       setListAccessories(data.data.docs);
       setTotalPages(data.data.totalPages);
-      setTotalDocs(data.data.totalDocs);
       setCurrentPage(page);
     } catch (error) {
       console.log(error);
@@ -161,7 +167,7 @@ export const AccessoryProvider = ({
         message.success("Thêm mới phụ kiện thành công!");
       }
       nav("/admin/accessories");
-      //   getAllAccessory(1, 6);
+      getAllAccessory(1, 6);
     } catch (error) {
       console.error(error);
     }

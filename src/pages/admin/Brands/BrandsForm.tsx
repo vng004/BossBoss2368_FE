@@ -71,7 +71,7 @@ const BrandsForm = () => {
                                     ? "border-[#ef4d38] placeholder-[#ef4d38] "
                                     : "border-gray-200 focus:ring-0"
                                     }`}
-                                placeholder="Tên danh mục"
+                                placeholder="Tên thương hiệu"
                                 {...register("title", { required: true })}
                             />
                         </div>

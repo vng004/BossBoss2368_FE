@@ -26,7 +26,7 @@ const BannerProduct = () => {
         <p className="text-xl lg:text-2xl text-gray-700 md:w-[42%]">
           Chúng tôi cung cấp một loạt các phụ kiện đi kèm, từ mũ bảo hiểm đến giày thể thao, giúp bạn tăng cường trải nghiệm và bảo vệ bản thân trong mỗi hành trình. Đừng quên ghé thăm cửa hàng để tìm kiếm những món đồ cần thiết cho chuyến đi của bạn! BossBoss2368 luôn đồng hành cùng bạn.
         </p>
-        <Link to={'/phu-kien-the-thao'} className="relative md:w-[46%] lg:w-[50%] border rounded-md border-[#ef4d38]">
+        <Link to={'/phu-kien-xe-dap'} className="relative md:w-[46%] lg:w-[50%] border rounded-md border-[#ef4d38]">
           <img src={accessory} alt="" className="w-full h-full object-cover rounded-md" />
           <p className="text-xl font-bold absolute bottom-4 right-4 text-white bg-[#ef4d38] px-4 py-2 rounded-lg">PHỤ KIỆN</p>
         </Link>
