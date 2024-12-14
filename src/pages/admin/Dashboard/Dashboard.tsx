@@ -30,7 +30,7 @@ const Dashboard = () => {
   const { totalDocs: totalP } = useContext(
     ProductContext
   ) as ProductContextType;
-  const { state: a, totalDocs: totalA } = useContext(
+  const { totalDocs: totalA } = useContext(
     AccessoryContext
   ) as AccessoryContextType;
   const { state: c } = useContext(CategoryContext) as CategoryContextType;
@@ -86,9 +86,7 @@ const Dashboard = () => {
           </div>
           <div className="flex justify-between items-center mt-7">
             <p className="text-[16px] font-medium">Tổng số phụ kiện</p>
-            <h4 className="text-title-md font-bold text-[#1c2434]">
-              {totalA}
-            </h4>
+            <h4 className="text-title-md font-bold text-[#1c2434]">{totalA}</h4>
           </div>
         </div>
       </div>
