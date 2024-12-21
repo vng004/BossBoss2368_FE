@@ -61,7 +61,7 @@ const CardHot = () => {
                                         <div className="rounded-br-[20px] rounded-tl-[20px] overflow-hidden">
                                             <motion.img
                                                 src={product.colors[0].image as string}
-                                                className="w-full h-full"
+                                                className="w-full h-[126px] md:h-[226px] object-cover"
                                                 alt={product.title}
                                                 whileHover={{ scale: 1.09 }}
                                                 transition={{ duration: 0.5, ease: "easeInOut" }}

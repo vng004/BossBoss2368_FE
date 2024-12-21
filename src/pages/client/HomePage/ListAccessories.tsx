@@ -61,7 +61,7 @@ const ListAccessories = () => {
                   <div className="rounded-br-[20px] rounded-tl-[20px] overflow-hidden">
                     <motion.img
                       src={accessory.image as string}
-                      className="w-full h-full"
+                      className="w-full h-[120px] md:h-[226px] object-cover"
                       alt={accessory.title}
                       whileHover={{ scale: 1.09 }}
                       transition={{ duration: 0.5, ease: "easeInOut" }}

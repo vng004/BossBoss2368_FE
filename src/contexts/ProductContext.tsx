@@ -78,18 +78,8 @@ export const ProductProvider = ({
   const VITE_UPLOAD_PRESET = import.meta.env.VITE_UPLOAD_PRESET;
 
   useEffect(() => {
-    getAllProduct(1, 6);
-    getProducts();
+    getAllProduct(1, 5);
   }, []);
-
-  const getProducts = async () => {
-    try {
-      const { data } = await instance.get("/products");
-      setTotalDocs(data.data.totalDocs);
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   const getAllProduct = async (page: number, limit: number) => {
     try {
@@ -103,6 +93,7 @@ export const ProductProvider = ({
         },
       });
       setTotalPages(data.data.totalPages);
+      setTotalDocs(data.data.totalDocs);
       setListProducts(data.data.docs);
       dispatch({ type: "SET_PRODUCTS", payload: data.data.docs });
     } catch (error) {
@@ -137,7 +128,9 @@ export const ProductProvider = ({
       );
 
       setTotalPages(data.data.totalPages);
+      setTotalDocs(data.data.totalDocs);
       setListProducts(data.data.docs);
+      console.log(data)
     } catch (error) {
       console.error(error);
     }
@@ -157,7 +150,6 @@ export const ProductProvider = ({
         dispatch({ type: "ADD_PRODUCT", payload: data.data });
         message.success("Thêm sản phẩm mới thành công!");
       }
-      getAllProduct(1, 6);
       navigate("/admin/products");
     } catch (error) {
       console.log(error);
@@ -201,7 +193,7 @@ export const ProductProvider = ({
             try {
               await instance.delete(`/products/${id}`);
               dispatch({ type: "REMOVE_PRODUCT", payload: id });
-              getAllProduct(1, 6);
+              getAllProduct(1, 5);
               message.success("Xóa sản phẩm thành công!");
             } catch (error) {
               console.error(error);
@@ -336,7 +328,6 @@ export const ProductProvider = ({
                 type: "UPDATE_PRODUCT_HOT",
                 payload: { productId, hotStatus },
               });
-              getAllProduct(1, 6);
             } catch (error) {
               console.log(error);
             }

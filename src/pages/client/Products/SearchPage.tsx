@@ -64,8 +64,8 @@ const SearchPage = () => {
                                 transition={{ duration: 0.5, ease: easeInOut }}
                                 ref={sectionRef}
                             >
-                                <div className="flex flex-wrap justify-between">
-                                    {combinedResults.map((item) => {
+                                <div className="flex flex-wrap justify-between lg:justify-start lg:gap-3">
+                                {combinedResults.map((item) => {
                                         const isProduct = 'colors' in item;
                                         const linkPath = isProduct ? `/xe-dap-the-thao/${item.slug}` : `/phu-kien-xe-dap/${item.slug}`;
                                         const imageSrc = isProduct ? item.colors[0]?.image : item.image;
@@ -87,7 +87,7 @@ const SearchPage = () => {
                                                         <div className="rounded-br-[20px] rounded-tl-[20px] overflow-hidden">
                                                             <motion.img
                                                                 src={imageSrc as string}
-                                                                className="w-full h-full"
+                                                                className="w-full h-[120px] md:h-[226px] object-cover"
                                                                 alt={title}
                                                                 whileHover={{ scale: 1.09 }}
                                                                 transition={{ duration: 0.5, ease: "easeInOut" }}

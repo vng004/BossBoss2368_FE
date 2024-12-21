@@ -6,15 +6,13 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { getTitleTab } from "../../../contants/client";
 import { BrandContext, BrandContextType } from "../../../contexts/BrandContext";
-import { smoothScrollToTop } from "../../../hooks/scroll";
 import { Brand } from "../../../interface/brand";
 import { Category } from "../../../interface/category";
 import { Product } from "../../../interface/products";
 
 const Brands = () => {
   const { state, onRemove } = useContext(BrandContext) as BrandContextType;
-  const [loading, setLoading] = useState<boolean>(false);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [loading] = useState<boolean>(false);
 
   const columns: ColumnsType<Brand> = [
     {
@@ -81,19 +79,6 @@ const Brands = () => {
       ),
     },
   ];
-  const handlePageChange = async (page: number) => {
-    smoothScrollToTop();
-    setCurrentPage(page);
-    setLoading(false);
-  };
-  const paginationConfig = {
-    pageSize: 6,
-    showSizeChanger: false,
-    pageSizeOptions: [6],
-    total: state.brands?.length || 0,
-    onchange: handlePageChange,
-    current: currentPage,
-  };
 
   return (
     <div>
@@ -118,7 +103,7 @@ const Brands = () => {
         dataSource={state.brands}
         rowKey="_id"
         className="p-4 bg-white rounded-lg shadow-lg"
-        pagination={paginationConfig}
+        pagination={false}
         loading={loading}
       />
     </div>

@@ -26,7 +26,7 @@ const Home_Page = () => {
   return loading ? (
     <div />
   ) : (
-    <div className=" mt-[-43px] text-[#1c2434]">
+    <div className=" mt-[-24px] md:mt-[-40px] text-[#1c2434]">
       <Helmet>
         <title>{getTitleTab("Xe Đạp Thể Thao, Địa Hình")}</title>
       </Helmet>

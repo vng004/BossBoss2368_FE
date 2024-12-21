@@ -18,7 +18,8 @@ const ProductHot = () => {
           return (
             <Link key={product.slug} to={`/xe-dap-the-thao/${product.slug}`}>
               <div className="flex gap-3 ">
-                <img src={product.colors[0].image as string} alt="" className="w-[130px] lg:w-[146px] h-auto" />
+                <img src={product.colors[0].image as string} alt=""                   
+                className="w-[160px] h-[110px] object-cover rounded-md" />
                 <div>
                   <p className="line-clamp-2 mb-2 hover:text-[#ef4d38]">{product.title} </p>
                   <div>

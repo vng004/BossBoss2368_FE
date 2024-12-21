@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { CircleCheckBig, X } from "lucide-react";
 import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { instance } from "../../../api";
 import { fb, getTitleTab, zl } from "../../../contants/client";
 import { CartContext, CartContextType } from "../../../contexts/CartContext";
@@ -31,6 +31,8 @@ const ProductDetail = () => {
   ) as ProductContextType;
   const [isModal, setIsModal] = useState(false);
   const [addData, setAddData] = useState<CartItem>();
+  const nav = useNavigate();
+  const { state: cart } = useContext(CartContext) as CartContextType;
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -87,6 +89,8 @@ const ProductDetail = () => {
         }
       }
     }
+    // nav(`/thanh-toan/${cart.cartId}`);
+
     setTimeout(() => {
       setIsModal(false);
     }, 6666);
@@ -287,7 +291,7 @@ const ProductDetail = () => {
               )}
 
               <div className="flex flex-wrap gap-y-3 items-center gap-x-10 lg:block">
-                {product?.sizes && product?.sizes.length > 1 && (
+                {product?.sizes && product?.sizes.length > 0 && (
                   <div className="flex flex-wrap items-center gap-4 text-[16px]">
                     <p>Kích thước:</p>
                     {product?.sizes.map((sizeOption) => (
@@ -335,6 +339,12 @@ const ProductDetail = () => {
               className={`w-full h-14 custom-button rounded-full`}
             >
               Thêm vào giỏ hàng
+            </button><button
+              type="button"
+              onClick={handleAddToCart}
+              className={`w-full h-14 custom-button rounded-full`}
+            >
+              Mua ngay
             </button>
           </form>
 
@@ -423,7 +433,7 @@ const ProductDetail = () => {
                     <div className="rounded-br-[20px] rounded-tl-[20px] overflow-hidden">
                       <motion.img
                         src={product.colors[0].image as string}
-                        className="w-full h-full"
+                        className="w-full h-[120px] md:h-[226px] object-cover"
                         alt={product.title}
                         whileHover={{ scale: 1.09 }}
                         transition={{ duration: 0.5, ease: "easeInOut" }}

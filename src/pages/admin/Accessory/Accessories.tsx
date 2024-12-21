@@ -46,7 +46,7 @@ const Accessories = () => {
           src={record?.image as string}
           alt={record.title}
           width={80}
-          className="rounded-lg"
+          className="rounded-lg h-[60px] object-cover w-[110px]"
         />
       ),
     },

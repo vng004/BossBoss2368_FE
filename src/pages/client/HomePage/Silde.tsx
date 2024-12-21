@@ -30,7 +30,7 @@ const Slide = () => {
                         key={index}
                         src={img}
                         alt={`Banner`}
-                        className="w-full h-full lg:h-[580px]"
+                        className="w-full h-[280px] md:h-[580px] object-cover"
                     />
                 ))}
             </Carousel>

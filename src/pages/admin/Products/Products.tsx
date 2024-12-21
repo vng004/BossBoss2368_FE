@@ -68,7 +68,7 @@ const Products = () => {
         <img
           src={record.colors[0]?.image as string}
           alt={record.title}
-          className="rounded-lg "
+          className="rounded-lg h-[60px] object-cover w-[110px]"
         />
       ),
     },
@@ -160,7 +160,7 @@ const Products = () => {
       page: page,
       limit: 6,
       selectedBrands: "",
-      isHot: selectedStatus,
+      isHot: undefined,
       onSale: undefined,
       priceRange: undefined,
       sortByDate: "latest",
@@ -169,7 +169,6 @@ const Products = () => {
     setCurrentPage(page);
     setLoading(false);
   };
-  console.log(listProducts);
 
   return (
     <div>

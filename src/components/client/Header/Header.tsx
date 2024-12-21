@@ -6,7 +6,7 @@ import {
   MenuIcon,
   Phone,
   Search,
-  ShoppingCart,
+  ShoppingCart ,
   Wrench,
 } from "lucide-react";
 import { useContext, useEffect, useRef, useState } from "react";
@@ -68,16 +68,16 @@ const Header = () => {
       {isTopVisible && search && (
         <div className="bg-[#f5f5f5] text-black text-xs">
           <div className="hidden sm:flex max-w-[768px] md:max-w-[1024px] lg:p-1 p-4 lg:max-w-[1280px] mx-auto justify-between items-center py-1">
-            <div className="gap-2 flex items-center">
+            <div className="gap-2 flex items-center text-sm">
               <p>Cần hỗ trợ: </p>
-              <Phone width={16} className="text-green-500" />
-              <a className="hover:text-[#ef4d38]" href="tel:0938131165">
+              <Phone width={18} className="text-green-500" />
+              <a className="hover:text-[#ef4d38] text-lg" href="tel:0938131165">
                 (+84) 938131165
               </a>
             </div>
 
             <div className="flex gap-2 items-center">
-              <p>Kết nối với tôi:</p>
+              <p className="text-sm">Kết nối với tôi:</p>
               <div className="flex gap-1 items-center">
                 <Link to="https://www.facebook.com/profile.php?id=100037761937210">
                   <img
@@ -166,7 +166,7 @@ const Header = () => {
                   <Phone size={18} className="text-green-500" />
                   <p>Hotline:</p>
                   <Link
-                    className="text-[#ef4d38] font-semibold"
+                    className="text-[#ef4d38] font-semibold text-lg"
                     to="tel:0938131165
 "
                   >
@@ -320,7 +320,7 @@ const Header = () => {
             >
               <Link to="/gio-hang">
                 <Badge count={totalQuantity} style={{ scale: "0.9" }}>
-                  <ShoppingCart />
+                  <ShoppingCart size={29} className="text-green-500"/>
                 </Badge>
               </Link>
             </Tooltip>
