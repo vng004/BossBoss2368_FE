@@ -320,7 +320,7 @@ const Header = () => {
             >
               <Link to="/gio-hang">
                 <Badge count={totalQuantity} style={{ scale: "0.9" }}>
-                  <ShoppingCart size={29} className="text-green-500"/>
+                  <ShoppingCart size={29} />
                 </Badge>
               </Link>
             </Tooltip>

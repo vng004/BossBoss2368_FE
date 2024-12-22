@@ -125,7 +125,7 @@ const Footer = () => {
       <div className="flex items-center justify-center gap-4 border-2 p-4 mb-17 md:mb-0">
         <p className="text-[15px]">BossBoss2368</p>
         <div className="flex items-center gap-1">
-          <p className="text-[13px] text-gray-800 ">© 2024, cung cấp bởi </p>
+          <p className="text-[13px] text-gray-800 ">© 2021, cung cấp bởi </p>
           <img src={VNG} alt="VNG" width={36} />
         </div>
       </div>

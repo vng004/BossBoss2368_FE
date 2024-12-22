@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
 import { instance } from "../../../../api";
-import { fb, getTitleTab, zl } from "../../../../contants/client";
+import { fb, getTitleTab, tiktok, zl } from "../../../../contants/client";
 import {
   AccessoryContext,
   AccessoryContextType,
@@ -246,15 +246,21 @@ const AccessoryDetail = () => {
             </div>
           </div>
           <div className="w-full lg:mt-6 space-y-4 border-2 rounded-lg p-4">
-            <p className="text-[#ef4d38] font-bold">Hỗ trợ khách hàng</p>
             <p className="text-[#ef4d38] font-bold">
-              Chuyên phân phối, sỉ lẻ xe đạp thể thao và phụ kiện xe đạp giá rẻ
-              nhất thị trường
+              Chúng tôi cung cấp các dịch vụ:
             </p>
+            <p className="text-[#ef4d38] font-bold">
+              • Mua bán : Đô Mỹ, tệ Đài, tệ Trung, usdt
+            </p>
+            <p className="text-[#ef4d38] font-bold">
+              • Cung cấp : Máy móc cho bênh viện , thẩm mỹ viện
+            </p>
+            <p className="text-[#ef4d38] font-bold">• Quần áo Xuất khẩu NGA</p>
+            <p className="text-[#ef4d38] font-bold">• Xưởng đồ gỗ</p>
             <div className="flex flex-wrap items-center space-x-2">
               <div className="flex items-center gap-2">
                 <p className="text-[#ef4d38] text-lg">•</p>
-                <p>Gọi ngay để được tư vấn: </p>
+                <p>Cần hợp tác liên hệ: </p>
               </div>
               <Link
                 to="tel:0938131165"
@@ -266,7 +272,7 @@ const AccessoryDetail = () => {
             <div className="flex flex-wrap gap-2 items-center">
               <div className="flex items-center gap-2">
                 <p className="text-[#ef4d38] text-lg">•</p>
-                <p>Liên hệ với chúng tôi:</p>
+                <p>Kết nối với chúng tôi:</p>
               </div>
               <Link to="https://www.facebook.com/profile.php?id=100037761937210">
                 <img
@@ -279,6 +285,13 @@ const AccessoryDetail = () => {
                 <img
                   src={zl}
                   alt=""
+                  className="w-[46px] h-[46px] transition-transform transform hover:scale-110"
+                />
+              </Link>
+              <Link to="https://www.tiktok.com/@bossboss2.3.6.8?_t=8rA9inz0AeC&_r=1">
+                <img
+                  alt=""
+                  src={tiktok}
                   className="w-[46px] h-[46px] transition-transform transform hover:scale-110"
                 />
               </Link>

@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { CircleCheckBig, X } from "lucide-react";
 import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { instance } from "../../../api";
-import { fb, getTitleTab, zl } from "../../../contants/client";
+import { fb, getTitleTab, tiktok, zl } from "../../../contants/client";
 import { CartContext, CartContextType } from "../../../contexts/CartContext";
 import {
   ProductContext,
@@ -31,8 +31,6 @@ const ProductDetail = () => {
   ) as ProductContextType;
   const [isModal, setIsModal] = useState(false);
   const [addData, setAddData] = useState<CartItem>();
-  const nav = useNavigate();
-  const { state: cart } = useContext(CartContext) as CartContextType;
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -263,7 +261,7 @@ const ProductDetail = () => {
               </div>
 
               {product?.colors && product?.colors.length > 1 && (
-                <div className="flex items-center gap-4 text-[16px]">
+                <div className="flex flex-wrap items-center gap-4 text-[16px]">
                   <p>Màu sắc:</p>
                   <div className="flex flex-wrap gap-4">
                     {product?.colors.map((c, index) => (
@@ -272,17 +270,18 @@ const ProductDetail = () => {
                         className={`p-[1px] flex border-2 border-dashed rounded-lg cursor-pointer 
                                     ${
                                       selectedColor === index
-                                        ? "border-[#ef4d38] text-white"
+                                        ? "border-[#ef4d38]  text-[#ef4d38]"
                                         : "hover:border-[#ef4d38]"
                                     }`}
                         onClick={() => handleColorClick(index)}
                       >
-                        <div>
+                        <div className="flex items-center">
                           <img
                             src={c.image as string}
                             alt={c.color}
-                            className="w-15 rounded-lg"
+                            className="w-15 h-11 object-cover rounded-lg"
                           />
+                          <p className="text-sm max-w-19 px-1">{c.color}</p>
                         </div>
                       </div>
                     ))}
@@ -339,12 +338,6 @@ const ProductDetail = () => {
               className={`w-full h-14 custom-button rounded-full`}
             >
               Thêm vào giỏ hàng
-            </button><button
-              type="button"
-              onClick={handleAddToCart}
-              className={`w-full h-14 custom-button rounded-full`}
-            >
-              Mua ngay
             </button>
           </form>
 
@@ -364,16 +357,23 @@ const ProductDetail = () => {
               </div>
             </div>
           </div>
+
           <div className="w-full lg:mt-6 space-y-4 border-2 rounded-lg p-4">
-            <p className="text-[#ef4d38] font-bold">Hỗ trợ khách hàng</p>
             <p className="text-[#ef4d38] font-bold">
-              Chuyên phân phối, sỉ lẻ xe đạp thể thao và phụ kiện xe đạp giá rẻ
-              nhất thị trường
+              Chúng tôi cung cấp các dịch vụ:
             </p>
+            <p className="text-[#ef4d38] font-bold">
+              • Mua bán : Đô Mỹ, tệ Đài, tệ Trung, usdt
+            </p>
+            <p className="text-[#ef4d38] font-bold">
+              • Cung cấp : Máy móc cho bênh viện , thẩm mỹ viện
+            </p>
+            <p className="text-[#ef4d38] font-bold">• Quần áo Xuất khẩu NGA</p>
+            <p className="text-[#ef4d38] font-bold">• Xưởng đồ gỗ</p>
             <div className="flex flex-wrap items-center space-x-2">
               <div className="flex items-center gap-2">
                 <p className="text-[#ef4d38] text-lg">•</p>
-                <p>Gọi ngay để được tư vấn: </p>
+                <p>Cần hợp tác liên hệ: </p>
               </div>
               <Link
                 to="tel:0938131165"
@@ -385,7 +385,7 @@ const ProductDetail = () => {
             <div className="flex flex-wrap gap-2 items-center">
               <div className="flex items-center gap-2">
                 <p className="text-[#ef4d38] text-lg">•</p>
-                <p>Liên hệ với chúng tôi:</p>
+                <p>Kết nối với chúng tôi:</p>
               </div>
               <Link to="https://www.facebook.com/profile.php?id=100037761937210">
                 <img
@@ -401,8 +401,16 @@ const ProductDetail = () => {
                   className="w-[46px] h-[46px] transition-transform transform hover:scale-110"
                 />
               </Link>
+              <Link to="https://www.tiktok.com/@bossboss2.3.6.8?_t=8rA9inz0AeC&_r=1">
+                <img
+                  alt=""
+                  src={tiktok}
+                  className="w-[46px] h-[46px] transition-transform transform hover:scale-110"
+                />
+              </Link>
             </div>
           </div>
+          
         </div>
       </div>
 
